@@ -4,6 +4,9 @@ Tokens de cor e estilos compartilhados do GAMB Design System, distribuiveis
 como CSS por CDN. A paleta padrao e a paleta pessoal GAMB; variantes `hover`,
 `active` e escalas sao calculadas a partir das cores base.
 
+Para uma explicacao curta de qual linha importar, consulte
+[IMPORTACAO-CDN.md](./IMPORTACAO-CDN.md).
+
 ## Uso Via CDN
 
 Para usar somente cores e evitar classes ou integracoes globais:
