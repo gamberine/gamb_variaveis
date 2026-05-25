@@ -9,28 +9,28 @@ como CSS por CDN. A paleta padrao e a paleta pessoal GAMB; variantes `hover`,
 Para usar somente cores e evitar classes ou integracoes globais:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.0/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
 ```
 
 Para usar o design system completo, incluindo utilities, botoes e pontes
 Tailwind/PrimeNG:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.0/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
 ```
 
-Na versao `v1.0.0`, a paleta minificada tem cerca de 17 KB; a folha completa
-tem cerca de 427 KB por preservar as utilities e componentes do arquivo
+Na versao `v1.0.1`, a paleta minificada tem cerca de 17 KB; a folha completa
+tem cerca de 417 KB por preservar as utilities e componentes do arquivo
 original. Prefira a paleta quando o projeto nao usar essas classes.
 
 Projetos legados que ainda usam tokens camelCase carregam uma segunda linha,
 de forma intencional:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.0/dist/compat/gamb-legacy.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/compat/gamb-legacy.min.css">
 ```
 
-Use sempre uma tag exata (`@v1.0.0`) em producao. Nao use `@main` ou uma URL
+Use sempre uma tag exata (`@v1.0.1`) em producao. Nao use `@main` ou uma URL
 sem versao: uma alteracao futura poderia atingir um projeto sem revisao.
 
 ## Paleta Padrao
@@ -76,7 +76,7 @@ Carregue o CDN primeiro e um arquivo do projeto depois. Defina somente bases;
 variantes, gradientes e componentes passam a acompanhar a nova paleta.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.0/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
 <link rel="stylesheet" href="/styles/paleta-projeto.css">
 ```
 
