@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.scss text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
+*.yml text eol=lf

@@ -1,0 +1,18 @@
+@use 'color-api' as gamb-colors;
+
+/*
+  Distribuicao minima: somente a paleta e suas variantes dinamicas.
+  Use o design system completo quando precisar de components/utilities.
+*/
+:root,
+:host,
+[data-theme='light'] {
+  color-scheme: light;
+  @include gamb-colors.light;
+}
+
+[data-theme='dark'],
+.dark {
+  color-scheme: dark;
+  @include gamb-colors.dark;
+}

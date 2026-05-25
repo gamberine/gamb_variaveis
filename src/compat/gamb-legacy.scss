@@ -1,0 +1,24 @@
+/*
+  Compatibilidade opt-in. Importe depois do CSS principal apenas em projetos
+  que ainda utilizam os tokens camelCase anteriores.
+*/
+:root,
+:host,
+[data-theme='light'] {
+  --primaryColor: var(--gamb-primary);
+  --primaryColorHover: var(--gamb-primary-hover);
+  --secondaryColor: var(--gamb-secondary);
+  --secondaryColorHover: var(--gamb-secondary-hover);
+  --destaqueColor: var(--gamb-accent);
+  --successColor: var(--gamb-success);
+  --warningColor: var(--gamb-warning);
+  --errorColor: var(--gamb-danger);
+  --bgColorLight: var(--gamb-background);
+  --bgColorDarker: var(--gamb-background-muted);
+  --textColor: var(--gamb-text);
+  --textColorMuted: var(--gamb-text-muted);
+  --textColorOnDark: var(--gamb-on-dark);
+  --fontTitulos: var(--gamb-font-primary);
+  --fontConteudo: var(--gamb-font-secondary);
+  --transitionSpeed: var(--gamb-transition-speed);
+}

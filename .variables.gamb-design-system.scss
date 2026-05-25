@@ -1,0 +1,1542 @@
+@use 'sass:list';
+@use 'src/color-api' as gamb-colors;
+
+/* ======================================================================
+   GAMB DESIGN SYSTEM TOKENS - Tailwind v4 / PrimeNG 20 / CSS comum
+   Arquivo novo gerado a partir de variables.scss + gemini-code + testetgamb.
+   Objetivo: tokens dinâmicos, ponte Sass -> CSS var(), utilities Tailwind-like,
+   severities PrimeNG e compatibilidade com classes/variáveis antigas.
+   ====================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
+:root,
+:host,
+[data-theme='light'] {
+  color-scheme: light;
+  --gamb-font-primary: 'Oxanium', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gamb-font-secondary: 'Saira Semi Condensed', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gamb-font-number: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  --gamb-font-badge: var(--gamb-font-secondary);
+
+  /* Paleta, estados dinamicos e escalas: ver src/_color-api.scss. */
+  @include gamb-colors.light;
+
+  /* Alias Tailwind/CSS comum: var(--color-*) disponível mesmo fora do build Tailwind */
+  --color-primary: var(--gamb-primary);
+  --color-primary-50: var(--gamb-primary-50);
+  --color-primary-100: var(--gamb-primary-100);
+  --color-primary-200: var(--gamb-primary-200);
+  --color-primary-300: var(--gamb-primary-300);
+  --color-primary-400: var(--gamb-primary-400);
+  --color-primary-500: var(--gamb-primary-500);
+  --color-primary-600: var(--gamb-primary-600);
+  --color-primary-700: var(--gamb-primary-700);
+  --color-primary-800: var(--gamb-primary-800);
+  --color-primary-900: var(--gamb-primary-900);
+  --color-primary-950: var(--gamb-primary-950);
+  --color-secondary: var(--gamb-secondary);
+  --color-secondary-50: var(--gamb-secondary-50);
+  --color-secondary-100: var(--gamb-secondary-100);
+  --color-secondary-200: var(--gamb-secondary-200);
+  --color-secondary-300: var(--gamb-secondary-300);
+  --color-secondary-400: var(--gamb-secondary-400);
+  --color-secondary-500: var(--gamb-secondary-500);
+  --color-secondary-600: var(--gamb-secondary-600);
+  --color-secondary-700: var(--gamb-secondary-700);
+  --color-secondary-800: var(--gamb-secondary-800);
+  --color-secondary-900: var(--gamb-secondary-900);
+  --color-secondary-950: var(--gamb-secondary-950);
+  --color-accent: var(--gamb-accent);
+  --color-accent-50: var(--gamb-accent-50);
+  --color-accent-100: var(--gamb-accent-100);
+  --color-accent-200: var(--gamb-accent-200);
+  --color-accent-300: var(--gamb-accent-300);
+  --color-accent-400: var(--gamb-accent-400);
+  --color-accent-500: var(--gamb-accent-500);
+  --color-accent-600: var(--gamb-accent-600);
+  --color-accent-700: var(--gamb-accent-700);
+  --color-accent-800: var(--gamb-accent-800);
+  --color-accent-900: var(--gamb-accent-900);
+  --color-accent-950: var(--gamb-accent-950);
+  --color-warn: var(--gamb-warn);
+  --color-warn-50: var(--gamb-warn-50);
+  --color-warn-100: var(--gamb-warn-100);
+  --color-warn-200: var(--gamb-warn-200);
+  --color-warn-300: var(--gamb-warn-300);
+  --color-warn-400: var(--gamb-warn-400);
+  --color-warn-500: var(--gamb-warn-500);
+  --color-warn-600: var(--gamb-warn-600);
+  --color-warn-700: var(--gamb-warn-700);
+  --color-warn-800: var(--gamb-warn-800);
+  --color-warn-900: var(--gamb-warn-900);
+  --color-warn-950: var(--gamb-warn-950);
+  --color-warning: var(--gamb-warning);
+  --color-warning-50: var(--gamb-warning-50);
+  --color-warning-100: var(--gamb-warning-100);
+  --color-warning-200: var(--gamb-warning-200);
+  --color-warning-300: var(--gamb-warning-300);
+  --color-warning-400: var(--gamb-warning-400);
+  --color-warning-500: var(--gamb-warning-500);
+  --color-warning-600: var(--gamb-warning-600);
+  --color-warning-700: var(--gamb-warning-700);
+  --color-warning-800: var(--gamb-warning-800);
+  --color-warning-900: var(--gamb-warning-900);
+  --color-warning-950: var(--gamb-warning-950);
+  --color-success: var(--gamb-success);
+  --color-success-50: var(--gamb-success-50);
+  --color-success-100: var(--gamb-success-100);
+  --color-success-200: var(--gamb-success-200);
+  --color-success-300: var(--gamb-success-300);
+  --color-success-400: var(--gamb-success-400);
+  --color-success-500: var(--gamb-success-500);
+  --color-success-600: var(--gamb-success-600);
+  --color-success-700: var(--gamb-success-700);
+  --color-success-800: var(--gamb-success-800);
+  --color-success-900: var(--gamb-success-900);
+  --color-success-950: var(--gamb-success-950);
+  --color-info: var(--gamb-info);
+  --color-info-50: var(--gamb-info-50);
+  --color-info-100: var(--gamb-info-100);
+  --color-info-200: var(--gamb-info-200);
+  --color-info-300: var(--gamb-info-300);
+  --color-info-400: var(--gamb-info-400);
+  --color-info-500: var(--gamb-info-500);
+  --color-info-600: var(--gamb-info-600);
+  --color-info-700: var(--gamb-info-700);
+  --color-info-800: var(--gamb-info-800);
+  --color-info-900: var(--gamb-info-900);
+  --color-info-950: var(--gamb-info-950);
+  --color-help: var(--gamb-help);
+  --color-help-50: var(--gamb-help-50);
+  --color-help-100: var(--gamb-help-100);
+  --color-help-200: var(--gamb-help-200);
+  --color-help-300: var(--gamb-help-300);
+  --color-help-400: var(--gamb-help-400);
+  --color-help-500: var(--gamb-help-500);
+  --color-help-600: var(--gamb-help-600);
+  --color-help-700: var(--gamb-help-700);
+  --color-help-800: var(--gamb-help-800);
+  --color-help-900: var(--gamb-help-900);
+  --color-help-950: var(--gamb-help-950);
+  --color-danger: var(--gamb-danger);
+  --color-danger-50: var(--gamb-danger-50);
+  --color-danger-100: var(--gamb-danger-100);
+  --color-danger-200: var(--gamb-danger-200);
+  --color-danger-300: var(--gamb-danger-300);
+  --color-danger-400: var(--gamb-danger-400);
+  --color-danger-500: var(--gamb-danger-500);
+  --color-danger-600: var(--gamb-danger-600);
+  --color-danger-700: var(--gamb-danger-700);
+  --color-danger-800: var(--gamb-danger-800);
+  --color-danger-900: var(--gamb-danger-900);
+  --color-danger-950: var(--gamb-danger-950);
+  --color-contrast: var(--gamb-contrast);
+  --color-contrast-50: var(--gamb-contrast-50);
+  --color-contrast-100: var(--gamb-contrast-100);
+  --color-contrast-200: var(--gamb-contrast-200);
+  --color-contrast-300: var(--gamb-contrast-300);
+  --color-contrast-400: var(--gamb-contrast-400);
+  --color-contrast-500: var(--gamb-contrast-500);
+  --color-contrast-600: var(--gamb-contrast-600);
+  --color-contrast-700: var(--gamb-contrast-700);
+  --color-contrast-800: var(--gamb-contrast-800);
+  --color-contrast-900: var(--gamb-contrast-900);
+  --color-contrast-950: var(--gamb-contrast-950);
+  --color-muted: var(--gamb-muted);
+  --color-muted-50: var(--gamb-muted-50);
+  --color-muted-100: var(--gamb-muted-100);
+  --color-muted-200: var(--gamb-muted-200);
+  --color-muted-300: var(--gamb-muted-300);
+  --color-muted-400: var(--gamb-muted-400);
+  --color-muted-500: var(--gamb-muted-500);
+  --color-muted-600: var(--gamb-muted-600);
+  --color-muted-700: var(--gamb-muted-700);
+  --color-muted-800: var(--gamb-muted-800);
+  --color-muted-900: var(--gamb-muted-900);
+  --color-muted-950: var(--gamb-muted-950);
+  --color-surface: var(--gamb-surface);
+  --color-surface-50: var(--gamb-surface-50);
+  --color-surface-100: var(--gamb-surface-100);
+  --color-surface-200: var(--gamb-surface-200);
+  --color-surface-300: var(--gamb-surface-300);
+  --color-surface-400: var(--gamb-surface-400);
+  --color-surface-500: var(--gamb-surface-500);
+  --color-surface-600: var(--gamb-surface-600);
+  --color-surface-700: var(--gamb-surface-700);
+  --color-surface-800: var(--gamb-surface-800);
+  --color-surface-900: var(--gamb-surface-900);
+  --color-surface-950: var(--gamb-surface-950);
+  --color-neutral: var(--gamb-neutral);
+  --color-neutral-50: var(--gamb-neutral-50);
+  --color-neutral-100: var(--gamb-neutral-100);
+  --color-neutral-200: var(--gamb-neutral-200);
+  --color-neutral-300: var(--gamb-neutral-300);
+  --color-neutral-400: var(--gamb-neutral-400);
+  --color-neutral-500: var(--gamb-neutral-500);
+  --color-neutral-600: var(--gamb-neutral-600);
+  --color-neutral-700: var(--gamb-neutral-700);
+  --color-neutral-800: var(--gamb-neutral-800);
+  --color-neutral-900: var(--gamb-neutral-900);
+  --color-neutral-950: var(--gamb-neutral-950);
+  --color-grey: var(--gamb-grey);
+  --color-grey-50: var(--gamb-grey-50);
+  --color-grey-100: var(--gamb-grey-100);
+  --color-grey-200: var(--gamb-grey-200);
+  --color-grey-300: var(--gamb-grey-300);
+  --color-grey-400: var(--gamb-grey-400);
+  --color-grey-500: var(--gamb-grey-500);
+  --color-grey-600: var(--gamb-grey-600);
+  --color-grey-700: var(--gamb-grey-700);
+  --color-grey-800: var(--gamb-grey-800);
+  --color-grey-900: var(--gamb-grey-900);
+  --color-grey-950: var(--gamb-grey-950);
+  --color-testetgamb: var(--gamb-testetgamb);
+  --color-testetgamb-50: var(--gamb-testetgamb-50);
+  --color-testetgamb-100: var(--gamb-testetgamb-100);
+  --color-testetgamb-200: var(--gamb-testetgamb-200);
+  --color-testetgamb-300: var(--gamb-testetgamb-300);
+  --color-testetgamb-400: var(--gamb-testetgamb-400);
+  --color-testetgamb-500: var(--gamb-testetgamb-500);
+  --color-testetgamb-600: var(--gamb-testetgamb-600);
+  --color-testetgamb-700: var(--gamb-testetgamb-700);
+  --color-testetgamb-800: var(--gamb-testetgamb-800);
+  --color-testetgamb-900: var(--gamb-testetgamb-900);
+  --color-testetgamb-950: var(--gamb-testetgamb-950);
+  --color-brand-teal: var(--gamb-brand-teal);
+  --color-brand-teal-50: var(--gamb-brand-teal-50);
+  --color-brand-teal-100: var(--gamb-brand-teal-100);
+  --color-brand-teal-200: var(--gamb-brand-teal-200);
+  --color-brand-teal-300: var(--gamb-brand-teal-300);
+  --color-brand-teal-400: var(--gamb-brand-teal-400);
+  --color-brand-teal-500: var(--gamb-brand-teal-500);
+  --color-brand-teal-600: var(--gamb-brand-teal-600);
+  --color-brand-teal-700: var(--gamb-brand-teal-700);
+  --color-brand-teal-800: var(--gamb-brand-teal-800);
+  --color-brand-teal-900: var(--gamb-brand-teal-900);
+  --color-brand-teal-950: var(--gamb-brand-teal-950);
+
+  /* Dimensões, motion e sombras */
+  --gamb-radius-xs: 0.25rem;
+  --gamb-radius-sm: 0.375rem;
+  --gamb-radius-md: 0.5rem;
+  --gamb-radius-lg: 0.75rem;
+  --gamb-radius-xl: 1rem;
+  --gamb-radius-2xl: 1.25rem;
+  --gamb-radius-pill: 9999px;
+  --gamb-radius-default: var(--gamb-radius-lg);
+  --gamb-height-control-sm: 2.25rem;
+  --gamb-height-control: clamp(2.5rem, 4.2dvh, 3rem);
+  --gamb-height-control-lg: clamp(2.75rem, 4.9dvh, 3.75rem);
+  --gamb-padding-control-x: 1.2rem;
+  --gamb-transition-speed: 250ms;
+  --gamb-transition-default: color var(--gamb-transition-speed) ease, background-color var(--gamb-transition-speed) ease, border-color var(--gamb-transition-speed) ease, box-shadow var(--gamb-transition-speed) ease, transform var(--gamb-transition-speed) ease, opacity var(--gamb-transition-speed) ease;
+  --gamb-hover-scale: 1.03;
+  --gamb-hover-opacity: 0.92;
+  --gamb-shadow-default: 0 2px 20px -5px rgb(16 23 34 / 0.13);
+  --gamb-shadow-light: 0 1px 6px rgb(16 23 34 / 0.12);
+  --gamb-shadow-hover: 0 12px 28px -16px rgb(16 23 34 / 0.34);
+  --gamb-shadow-focus: 0 0 0 3px var(--gamb-focus-ring);
+
+  /* Gradientes gerados a partir dos tokens */
+  --gamb-gradient-primary: linear-gradient(135deg, var(--gamb-primary-400) 0%, var(--gamb-primary-500) 48%, var(--gamb-primary-700) 100%);
+  --gamb-gradient-secondary: linear-gradient(135deg, var(--gamb-secondary-400) 0%, var(--gamb-secondary-500) 48%, var(--gamb-secondary-700) 100%);
+  --gamb-gradient-accent: linear-gradient(135deg, var(--gamb-accent-400) 0%, var(--gamb-accent-500) 48%, var(--gamb-accent-700) 100%);
+  --gamb-gradient-warn: linear-gradient(135deg, var(--gamb-warn-400) 0%, var(--gamb-warn-500) 48%, var(--gamb-warn-700) 100%);
+  --gamb-gradient-warning: linear-gradient(135deg, var(--gamb-warning-400) 0%, var(--gamb-warning-500) 48%, var(--gamb-warning-700) 100%);
+  --gamb-gradient-success: linear-gradient(135deg, var(--gamb-success-400) 0%, var(--gamb-success-500) 48%, var(--gamb-success-700) 100%);
+  --gamb-gradient-info: linear-gradient(135deg, var(--gamb-info-400) 0%, var(--gamb-info-500) 48%, var(--gamb-info-700) 100%);
+  --gamb-gradient-help: linear-gradient(135deg, var(--gamb-help-400) 0%, var(--gamb-help-500) 48%, var(--gamb-help-700) 100%);
+  --gamb-gradient-danger: linear-gradient(135deg, var(--gamb-danger-400) 0%, var(--gamb-danger-500) 48%, var(--gamb-danger-700) 100%);
+  --gamb-gradient-contrast: linear-gradient(135deg, var(--gamb-contrast-400) 0%, var(--gamb-contrast-500) 48%, var(--gamb-contrast-700) 100%);
+  --gamb-gradient-muted: linear-gradient(135deg, var(--gamb-muted-400) 0%, var(--gamb-muted-500) 48%, var(--gamb-muted-700) 100%);
+  --gamb-gradient-surface: linear-gradient(135deg, var(--gamb-surface-400) 0%, var(--gamb-surface-500) 48%, var(--gamb-surface-700) 100%);
+  --gamb-gradient-neutral: linear-gradient(135deg, var(--gamb-neutral-400) 0%, var(--gamb-neutral-500) 48%, var(--gamb-neutral-700) 100%);
+  --gamb-gradient-grey: linear-gradient(135deg, var(--gamb-grey-400) 0%, var(--gamb-grey-500) 48%, var(--gamb-grey-700) 100%);
+  --gamb-gradient-testetgamb: linear-gradient(135deg, var(--gamb-testetgamb-400) 0%, var(--gamb-testetgamb-500) 48%, var(--gamb-testetgamb-700) 100%);
+  --gamb-gradient-brand-teal: linear-gradient(135deg, var(--gamb-brand-teal-400) 0%, var(--gamb-brand-teal-500) 48%, var(--gamb-brand-teal-700) 100%);
+  --gamb-gradient-primary-soft: linear-gradient(135deg, var(--gamb-primary-50), var(--gamb-primary-200));
+  --gamb-gradient-header: linear-gradient(63deg, var(--gamb-secondary) 0% 31%, var(--gamb-secondary-600) 72% 86%, var(--gamb-primary-500) 107%);
+  --gamb-gradient-login: linear-gradient(90deg, var(--gamb-accent), var(--gamb-accent-400), var(--gamb-secondary));
+
+  /* Ponte para PrimeNG/PrimeUI styled mode. Tokens inexistentes são inofensivos; os existentes passam a seguir este sistema. */
+  --p-primary-color: var(--gamb-primary);
+  --p-primary-hover-color: var(--gamb-primary-hover);
+  --p-primary-active-color: var(--gamb-primary-active);
+  --p-primary-contrast-color: var(--gamb-primary-foreground);
+  --p-focus-ring-color: var(--gamb-focus-ring);
+  --p-highlight-background: var(--gamb-primary-50);
+  --p-highlight-color: var(--gamb-primary-800);
+  --p-highlight-focus-background: var(--gamb-primary-100);
+  --p-text-color: var(--gamb-text);
+  --p-text-muted-color: var(--gamb-text-muted);
+  --p-content-background: var(--gamb-surface);
+  --p-content-color: var(--gamb-text);
+  --p-content-border-color: var(--gamb-border);
+  --p-border-color: var(--gamb-border);
+  --p-surface-0: #ffffff;
+  --p-surface-50: var(--gamb-surface-50);
+  --p-surface-100: var(--gamb-surface-100);
+  --p-surface-200: var(--gamb-surface-200);
+  --p-surface-300: var(--gamb-surface-300);
+  --p-surface-400: var(--gamb-surface-400);
+  --p-surface-500: var(--gamb-surface-500);
+  --p-surface-600: var(--gamb-surface-600);
+  --p-surface-700: var(--gamb-surface-700);
+  --p-surface-800: var(--gamb-surface-800);
+  --p-surface-900: var(--gamb-surface-900);
+  --p-form-field-background: var(--gamb-surface);
+  --p-form-field-color: var(--gamb-text);
+  --p-form-field-placeholder-color: var(--gamb-text-light);
+  --p-form-field-border-color: var(--gamb-border);
+  --p-form-field-hover-border-color: var(--gamb-primary-300);
+  --p-form-field-focus-border-color: var(--gamb-primary);
+  --p-button-border-radius: var(--gamb-radius-default);
+  --p-button-primary-background: var(--gamb-primary);
+  --p-button-primary-hover-background: var(--gamb-primary-hover);
+  --p-button-primary-active-background: var(--gamb-primary-active);
+  --p-button-primary-border-color: var(--gamb-primary);
+  --p-button-primary-hover-border-color: var(--gamb-primary-hover);
+  --p-button-primary-color: var(--gamb-primary-foreground);
+  --p-button-secondary-background: var(--gamb-secondary);
+  --p-button-secondary-hover-background: var(--gamb-secondary-hover);
+  --p-button-secondary-active-background: var(--gamb-secondary-active);
+  --p-button-secondary-border-color: var(--gamb-secondary);
+  --p-button-secondary-hover-border-color: var(--gamb-secondary-hover);
+  --p-button-secondary-color: var(--gamb-secondary-foreground);
+  --p-button-success-background: var(--gamb-success);
+  --p-button-success-hover-background: var(--gamb-success-hover);
+  --p-button-success-active-background: var(--gamb-success-active);
+  --p-button-success-border-color: var(--gamb-success);
+  --p-button-success-hover-border-color: var(--gamb-success-hover);
+  --p-button-success-color: var(--gamb-success-foreground);
+  --p-button-info-background: var(--gamb-info);
+  --p-button-info-hover-background: var(--gamb-info-hover);
+  --p-button-info-active-background: var(--gamb-info-active);
+  --p-button-info-border-color: var(--gamb-info);
+  --p-button-info-hover-border-color: var(--gamb-info-hover);
+  --p-button-info-color: var(--gamb-info-foreground);
+  --p-button-warn-background: var(--gamb-warn);
+  --p-button-warn-hover-background: var(--gamb-warn-hover);
+  --p-button-warn-active-background: var(--gamb-warn-active);
+  --p-button-warn-border-color: var(--gamb-warn);
+  --p-button-warn-hover-border-color: var(--gamb-warn-hover);
+  --p-button-warn-color: var(--gamb-warn-foreground);
+  --p-button-warning-background: var(--gamb-warning);
+  --p-button-warning-hover-background: var(--gamb-warning-hover);
+  --p-button-warning-active-background: var(--gamb-warning-active);
+  --p-button-warning-border-color: var(--gamb-warning);
+  --p-button-warning-hover-border-color: var(--gamb-warning-hover);
+  --p-button-warning-color: var(--gamb-warning-foreground);
+  --p-button-help-background: var(--gamb-help);
+  --p-button-help-hover-background: var(--gamb-help-hover);
+  --p-button-help-active-background: var(--gamb-help-active);
+  --p-button-help-border-color: var(--gamb-help);
+  --p-button-help-hover-border-color: var(--gamb-help-hover);
+  --p-button-help-color: var(--gamb-help-foreground);
+  --p-button-danger-background: var(--gamb-danger);
+  --p-button-danger-hover-background: var(--gamb-danger-hover);
+  --p-button-danger-active-background: var(--gamb-danger-active);
+  --p-button-danger-border-color: var(--gamb-danger);
+  --p-button-danger-hover-border-color: var(--gamb-danger-hover);
+  --p-button-danger-color: var(--gamb-danger-foreground);
+  --p-button-contrast-background: var(--gamb-contrast);
+  --p-button-contrast-hover-background: var(--gamb-contrast-hover);
+  --p-button-contrast-active-background: var(--gamb-contrast-active);
+  --p-button-contrast-border-color: var(--gamb-contrast);
+  --p-button-contrast-hover-border-color: var(--gamb-contrast-hover);
+  --p-button-contrast-color: var(--gamb-contrast-foreground);
+}
+
+[data-theme='dark'],
+.dark {
+  color-scheme: dark;
+  @include gamb-colors.dark;
+  --p-content-background: var(--gamb-surface);
+  --p-content-color: var(--gamb-text);
+  --p-text-color: var(--gamb-text);
+  --p-text-muted-color: var(--gamb-text-muted);
+}
+
+@theme static {
+  --font-sans: var(--gamb-font-primary);
+  --gamb-font-primary: 'Oxanium', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gamb-font-secondary: 'Saira Semi Condensed', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gamb-font-number: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  --font-mono: var(--gamb-font-number);
+  --color-primary: var(--gamb-primary);
+  --color-primary-50: var(--gamb-primary-50);
+  --color-primary-100: var(--gamb-primary-100);
+  --color-primary-200: var(--gamb-primary-200);
+  --color-primary-300: var(--gamb-primary-300);
+  --color-primary-400: var(--gamb-primary-400);
+  --color-primary-500: var(--gamb-primary-500);
+  --color-primary-600: var(--gamb-primary-600);
+  --color-primary-700: var(--gamb-primary-700);
+  --color-primary-800: var(--gamb-primary-800);
+  --color-primary-900: var(--gamb-primary-900);
+  --color-primary-950: var(--gamb-primary-950);
+  --color-secondary: var(--gamb-secondary);
+  --color-secondary-50: var(--gamb-secondary-50);
+  --color-secondary-100: var(--gamb-secondary-100);
+  --color-secondary-200: var(--gamb-secondary-200);
+  --color-secondary-300: var(--gamb-secondary-300);
+  --color-secondary-400: var(--gamb-secondary-400);
+  --color-secondary-500: var(--gamb-secondary-500);
+  --color-secondary-600: var(--gamb-secondary-600);
+  --color-secondary-700: var(--gamb-secondary-700);
+  --color-secondary-800: var(--gamb-secondary-800);
+  --color-secondary-900: var(--gamb-secondary-900);
+  --color-secondary-950: var(--gamb-secondary-950);
+  --color-accent: var(--gamb-accent);
+  --color-accent-50: var(--gamb-accent-50);
+  --color-accent-100: var(--gamb-accent-100);
+  --color-accent-200: var(--gamb-accent-200);
+  --color-accent-300: var(--gamb-accent-300);
+  --color-accent-400: var(--gamb-accent-400);
+  --color-accent-500: var(--gamb-accent-500);
+  --color-accent-600: var(--gamb-accent-600);
+  --color-accent-700: var(--gamb-accent-700);
+  --color-accent-800: var(--gamb-accent-800);
+  --color-accent-900: var(--gamb-accent-900);
+  --color-accent-950: var(--gamb-accent-950);
+  --color-warn: var(--gamb-warn);
+  --color-warn-50: var(--gamb-warn-50);
+  --color-warn-100: var(--gamb-warn-100);
+  --color-warn-200: var(--gamb-warn-200);
+  --color-warn-300: var(--gamb-warn-300);
+  --color-warn-400: var(--gamb-warn-400);
+  --color-warn-500: var(--gamb-warn-500);
+  --color-warn-600: var(--gamb-warn-600);
+  --color-warn-700: var(--gamb-warn-700);
+  --color-warn-800: var(--gamb-warn-800);
+  --color-warn-900: var(--gamb-warn-900);
+  --color-warn-950: var(--gamb-warn-950);
+  --color-warning: var(--gamb-warning);
+  --color-warning-50: var(--gamb-warning-50);
+  --color-warning-100: var(--gamb-warning-100);
+  --color-warning-200: var(--gamb-warning-200);
+  --color-warning-300: var(--gamb-warning-300);
+  --color-warning-400: var(--gamb-warning-400);
+  --color-warning-500: var(--gamb-warning-500);
+  --color-warning-600: var(--gamb-warning-600);
+  --color-warning-700: var(--gamb-warning-700);
+  --color-warning-800: var(--gamb-warning-800);
+  --color-warning-900: var(--gamb-warning-900);
+  --color-warning-950: var(--gamb-warning-950);
+  --color-success: var(--gamb-success);
+  --color-success-50: var(--gamb-success-50);
+  --color-success-100: var(--gamb-success-100);
+  --color-success-200: var(--gamb-success-200);
+  --color-success-300: var(--gamb-success-300);
+  --color-success-400: var(--gamb-success-400);
+  --color-success-500: var(--gamb-success-500);
+  --color-success-600: var(--gamb-success-600);
+  --color-success-700: var(--gamb-success-700);
+  --color-success-800: var(--gamb-success-800);
+  --color-success-900: var(--gamb-success-900);
+  --color-success-950: var(--gamb-success-950);
+  --color-info: var(--gamb-info);
+  --color-info-50: var(--gamb-info-50);
+  --color-info-100: var(--gamb-info-100);
+  --color-info-200: var(--gamb-info-200);
+  --color-info-300: var(--gamb-info-300);
+  --color-info-400: var(--gamb-info-400);
+  --color-info-500: var(--gamb-info-500);
+  --color-info-600: var(--gamb-info-600);
+  --color-info-700: var(--gamb-info-700);
+  --color-info-800: var(--gamb-info-800);
+  --color-info-900: var(--gamb-info-900);
+  --color-info-950: var(--gamb-info-950);
+  --color-help: var(--gamb-help);
+  --color-help-50: var(--gamb-help-50);
+  --color-help-100: var(--gamb-help-100);
+  --color-help-200: var(--gamb-help-200);
+  --color-help-300: var(--gamb-help-300);
+  --color-help-400: var(--gamb-help-400);
+  --color-help-500: var(--gamb-help-500);
+  --color-help-600: var(--gamb-help-600);
+  --color-help-700: var(--gamb-help-700);
+  --color-help-800: var(--gamb-help-800);
+  --color-help-900: var(--gamb-help-900);
+  --color-help-950: var(--gamb-help-950);
+  --color-danger: var(--gamb-danger);
+  --color-danger-50: var(--gamb-danger-50);
+  --color-danger-100: var(--gamb-danger-100);
+  --color-danger-200: var(--gamb-danger-200);
+  --color-danger-300: var(--gamb-danger-300);
+  --color-danger-400: var(--gamb-danger-400);
+  --color-danger-500: var(--gamb-danger-500);
+  --color-danger-600: var(--gamb-danger-600);
+  --color-danger-700: var(--gamb-danger-700);
+  --color-danger-800: var(--gamb-danger-800);
+  --color-danger-900: var(--gamb-danger-900);
+  --color-danger-950: var(--gamb-danger-950);
+  --color-contrast: var(--gamb-contrast);
+  --color-contrast-50: var(--gamb-contrast-50);
+  --color-contrast-100: var(--gamb-contrast-100);
+  --color-contrast-200: var(--gamb-contrast-200);
+  --color-contrast-300: var(--gamb-contrast-300);
+  --color-contrast-400: var(--gamb-contrast-400);
+  --color-contrast-500: var(--gamb-contrast-500);
+  --color-contrast-600: var(--gamb-contrast-600);
+  --color-contrast-700: var(--gamb-contrast-700);
+  --color-contrast-800: var(--gamb-contrast-800);
+  --color-contrast-900: var(--gamb-contrast-900);
+  --color-contrast-950: var(--gamb-contrast-950);
+  --color-muted: var(--gamb-muted);
+  --color-muted-50: var(--gamb-muted-50);
+  --color-muted-100: var(--gamb-muted-100);
+  --color-muted-200: var(--gamb-muted-200);
+  --color-muted-300: var(--gamb-muted-300);
+  --color-muted-400: var(--gamb-muted-400);
+  --color-muted-500: var(--gamb-muted-500);
+  --color-muted-600: var(--gamb-muted-600);
+  --color-muted-700: var(--gamb-muted-700);
+  --color-muted-800: var(--gamb-muted-800);
+  --color-muted-900: var(--gamb-muted-900);
+  --color-muted-950: var(--gamb-muted-950);
+  --color-surface: var(--gamb-surface);
+  --color-surface-50: var(--gamb-surface-50);
+  --color-surface-100: var(--gamb-surface-100);
+  --color-surface-200: var(--gamb-surface-200);
+  --color-surface-300: var(--gamb-surface-300);
+  --color-surface-400: var(--gamb-surface-400);
+  --color-surface-500: var(--gamb-surface-500);
+  --color-surface-600: var(--gamb-surface-600);
+  --color-surface-700: var(--gamb-surface-700);
+  --color-surface-800: var(--gamb-surface-800);
+  --color-surface-900: var(--gamb-surface-900);
+  --color-surface-950: var(--gamb-surface-950);
+  --color-neutral: var(--gamb-neutral);
+  --color-neutral-50: var(--gamb-neutral-50);
+  --color-neutral-100: var(--gamb-neutral-100);
+  --color-neutral-200: var(--gamb-neutral-200);
+  --color-neutral-300: var(--gamb-neutral-300);
+  --color-neutral-400: var(--gamb-neutral-400);
+  --color-neutral-500: var(--gamb-neutral-500);
+  --color-neutral-600: var(--gamb-neutral-600);
+  --color-neutral-700: var(--gamb-neutral-700);
+  --color-neutral-800: var(--gamb-neutral-800);
+  --color-neutral-900: var(--gamb-neutral-900);
+  --color-neutral-950: var(--gamb-neutral-950);
+  --color-grey: var(--gamb-grey);
+  --color-grey-50: var(--gamb-grey-50);
+  --color-grey-100: var(--gamb-grey-100);
+  --color-grey-200: var(--gamb-grey-200);
+  --color-grey-300: var(--gamb-grey-300);
+  --color-grey-400: var(--gamb-grey-400);
+  --color-grey-500: var(--gamb-grey-500);
+  --color-grey-600: var(--gamb-grey-600);
+  --color-grey-700: var(--gamb-grey-700);
+  --color-grey-800: var(--gamb-grey-800);
+  --color-grey-900: var(--gamb-grey-900);
+  --color-grey-950: var(--gamb-grey-950);
+  --color-testetgamb: var(--gamb-testetgamb);
+  --color-testetgamb-50: var(--gamb-testetgamb-50);
+  --color-testetgamb-100: var(--gamb-testetgamb-100);
+  --color-testetgamb-200: var(--gamb-testetgamb-200);
+  --color-testetgamb-300: var(--gamb-testetgamb-300);
+  --color-testetgamb-400: var(--gamb-testetgamb-400);
+  --color-testetgamb-500: var(--gamb-testetgamb-500);
+  --color-testetgamb-600: var(--gamb-testetgamb-600);
+  --color-testetgamb-700: var(--gamb-testetgamb-700);
+  --color-testetgamb-800: var(--gamb-testetgamb-800);
+  --color-testetgamb-900: var(--gamb-testetgamb-900);
+  --color-testetgamb-950: var(--gamb-testetgamb-950);
+  --color-brand-teal: var(--gamb-brand-teal);
+  --color-brand-teal-50: var(--gamb-brand-teal-50);
+  --color-brand-teal-100: var(--gamb-brand-teal-100);
+  --color-brand-teal-200: var(--gamb-brand-teal-200);
+  --color-brand-teal-300: var(--gamb-brand-teal-300);
+  --color-brand-teal-400: var(--gamb-brand-teal-400);
+  --color-brand-teal-500: var(--gamb-brand-teal-500);
+  --color-brand-teal-600: var(--gamb-brand-teal-600);
+  --color-brand-teal-700: var(--gamb-brand-teal-700);
+  --color-brand-teal-800: var(--gamb-brand-teal-800);
+  --color-brand-teal-900: var(--gamb-brand-teal-900);
+  --color-brand-teal-950: var(--gamb-brand-teal-950);
+  --gamb-shadow-default: 0 2px 20px -5px rgb(16 23 34 / 0.13);
+  --gamb-shadow-light: 0 1px 6px rgb(16 23 34 / 0.12);
+  --gamb-shadow-hover: 0 12px 28px -16px rgb(16 23 34 / 0.34);
+  --gamb-shadow-focus: 0 0 0 3px var(--gamb-focus-ring);
+  --gamb-radius-default: 0.75rem;
+  --gamb-radius-xs: 0.25rem;
+  --gamb-radius-sm: 0.375rem;
+  --gamb-radius-md: 0.5rem;
+  --gamb-radius-lg: 0.75rem;
+  --gamb-radius-xl: 1rem;
+  --gamb-radius-2xl: 1.25rem;
+  --gamb-radius-pill: 9999px;
+  --background-image-gradient-primary: var(--gamb-gradient-primary);
+  --background-image-gradient-secondary: var(--gamb-gradient-secondary);
+  --background-image-gradient-accent: var(--gamb-gradient-accent);
+  --background-image-gradient-warn: var(--gamb-gradient-warn);
+  --background-image-gradient-warning: var(--gamb-gradient-warning);
+  --background-image-gradient-success: var(--gamb-gradient-success);
+  --background-image-gradient-info: var(--gamb-gradient-info);
+  --background-image-gradient-help: var(--gamb-gradient-help);
+  --background-image-gradient-danger: var(--gamb-gradient-danger);
+  --background-image-gradient-contrast: var(--gamb-gradient-contrast);
+  --background-image-gradient-muted: var(--gamb-gradient-muted);
+  --background-image-gradient-surface: var(--gamb-gradient-surface);
+  --background-image-gradient-neutral: var(--gamb-gradient-neutral);
+  --background-image-gradient-grey: var(--gamb-gradient-grey);
+  --background-image-gradient-testetgamb: var(--gamb-gradient-testetgamb);
+  --background-image-gradient-brand-teal: var(--gamb-gradient-brand-teal);
+  --background-image-gradient-primary-soft: var(--gamb-gradient-primary-soft);
+  --background-image-gradient-header: var(--gamb-gradient-header);
+  --background-image-gradient-login: var(--gamb-gradient-login);
+}
+
+/* ----------------------------------------------------------------------
+   Sass aliases: mantêm o app.scss atual funcionando e viram ponte para CSS var().
+   Use os nomes novos em código novo; os antigos continuam por compatibilidade.
+------------------------------------------------------------------------ */
+$white-color: var(--gamb-white, #ffffff) !default;
+$black-color: var(--gamb-black, #000000) !default;
+
+$primary-color: var(--gamb-primary, #ed3224) !default;
+$primary-color-hover: var(--gamb-primary-hover, #cb2e23) !default;
+$primary-hover: $primary-color-hover !default;
+$primary-light: var(--gamb-primary-200, #f7b6b1) !default;
+$primary-dark: var(--gamb-primary-active, #931f16) !default;
+
+$secondary-color: var(--gamb-secondary, #1b5866) !default;
+$secondary-hover: var(--gamb-secondary-hover, #15424d) !default;
+$secondary-color-hover: $secondary-hover !default;
+
+$accent-color: var(--gamb-accent, #ff4089) !default;
+$accent-hover: var(--gamb-accent-hover, #e6196b) !default;
+$accent-dark: var(--gamb-accent-active, #be124f) !default;
+$warn-color: var(--gamb-warn, #f59e0b) !default;
+$warn-hover: var(--gamb-warn-hover, #d78709) !default;
+$warn-var: var(--gamb-warn-400, #f9c665) !default;
+$warning-color: var(--gamb-warning, #f59e0b) !default;
+$warning-hover: var(--gamb-warning-hover, #d97706) !default;
+
+/* Compatibilidade com o typo legado: warm = warning. */
+$warm-color: $warn-color !default;
+$warm-color-hover: $warn-hover !default;
+$warm-color-var: $warn-var !default;
+
+$success-color: var(--gamb-success, #16a34a) !default;
+$success-hover: var(--gamb-success-hover, #138b3f) !default;
+$danger-color: var(--gamb-danger, #dc2626) !default;
+$danger-hover: var(--gamb-danger-hover, #b91c1c) !default;
+$danger-soft: var(--gamb-danger-300, #ce6c6c) !default;
+$info-color: var(--gamb-info, #5ca8ff) !default;
+$info-color-hover: var(--gamb-info-hover, #3b82f6) !default;
+$help-color: var(--gamb-help, #8da4dd) !default;
+$help-hover: var(--gamb-help-hover, #7c8fd0) !default;
+$contrast-color: var(--gamb-contrast, #191b1c) !default;
+
+$text-color: var(--gamb-text-muted, #575f6d) !default;
+$text-dark: var(--gamb-text, #191b1c) !default;
+$text-light: var(--gamb-text-light, #b2bed1) !default;
+$grey-color: var(--gamb-grey, #c7cfdb) !default;
+$grey-medium: var(--gamb-grey-hover, #909fbf) !default;
+$grey-secondary: var(--gamb-grey-active, #575f6d) !default;
+
+$bg-primary: var(--gamb-background, #f2f4f7) !default;
+$bg-secondary: var(--gamb-primary-100, #d7e7ff) !default;
+$bg-medium: var(--gamb-background-muted, #dfe2e7) !default;
+$bg-white: var(--gamb-surface, #ffffff) !default;
+$bg-hover: var(--gamb-surface-hover, #f2f2f2) !default;
+$border-color: var(--gamb-border, #dfe2e7) !default;
+$border-color-hover: var(--gamb-border-hover, #c2c6cd) !default;
+
+$login-text-deep: var(--gamb-contrast-700, #333b49) !default;
+$login-highlight-pink: var(--gamb-accent-400, #ff5cbd) !default;
+$login-highlight-yellow: var(--gamb-warning-200, #fff069) !default;
+$login-accent-border: var(--gamb-accent, #ff3e6c) !default;
+$login-icons-base: var(--gamb-warning-500, #ff7e3e) !default;
+$login-icons-gradient-start: rgba(65, 65, 65, 0.25) !default;
+$login-icons-gradient-mid: rgba(61, 78, 141, 0.835171568627451) !default;
+$login-icons-gradient-end: rgba(255, 62, 108, 1) !default;
+$login-soft-shadow: rgba(0, 0, 0, 0.1) !default;
+$login-medium-shadow: rgba(0, 0, 0, 0.2) !default;
+$login-footer-bg: var(--gamb-background, #f2f2f2) !default;
+$dark-light: var(--gamb-contrast-600, #303f76) !default;
+$dark-color: var(--gamb-contrast, #1c2130) !default;
+$dark-medium: var(--gamb-contrast-700, #1b233f) !default;
+
+$font-primary: var(--gamb-font-primary, 'Oxanium', sans-serif) !default;
+$font-secondary: var(--gamb-font-secondary, 'Saira Semi Condensed', sans-serif) !default;
+$font-number: var(--gamb-font-number, 'Share Tech Mono', monospace) !default;
+$font-badge: var(--gamb-font-badge, var(--gamb-font-secondary)) !default;
+
+$borderRadius: var(--gamb-radius-default, 0.75rem) !default;
+$heightMaior: var(--gamb-height-control-lg, clamp(2.75rem, 4.9dvh, 3.75rem)) !default;
+$heightDefault: var(--gamb-height-control, clamp(2.5rem, 4.2dvh, 3rem)) !default;
+$paddingDefault: var(--gamb-padding-control-x, 1.2rem) !default;
+$bgPositionDefault: left center !default;
+$bgPositionHover: right center !default;
+$transition: var(--gamb-transition-default, all ease 0.3s) !default;
+$hoverScale: var(--gamb-hover-scale, 1.03) !default;
+$hoverOpacity: var(--gamb-hover-opacity, 0.92) !default;
+$primary-shadow: var(--gamb-shadow-default, 0 2px 20px -5px rgb(16 23 34 / 0.13)) !default;
+$boxShadow: var(--gamb-shadow-light, 0 1px 6px rgb(16 23 34 / 0.12)) !default;
+$hoverBoxShadow: var(--gamb-shadow-hover, 0 12px 28px -16px rgb(16 23 34 / 0.34)) !default;
+
+$gradientPrincipal: var(--gamb-gradient-primary, linear-gradient(135deg, #ed3224, #cb2e23)) !default;
+$gradientSecundario: var(--gamb-gradient-secondary, linear-gradient(135deg, #1b5866, #15424d)) !default;
+$gradientHeader: var(--gamb-gradient-header, linear-gradient(63deg, #1b5866 0% 31%, #15424d 72% 86%, #ed3224 107%)) !default;
+$gradientDestaque: var(--gamb-gradient-accent, linear-gradient(135deg, #ff4089, #e6196b)) !default;
+$gradientLogin: var(--gamb-gradient-login, linear-gradient(90deg, #ff4089, #f477a7, #1b5866)) !default;
+$gradientPastel: var(--gamb-gradient-primary-soft, linear-gradient(135deg, #f2f4f7, #dfe2e7)) !default;
+$gradientTextos: var(--gamb-gradient-neutral, linear-gradient(135deg, #575f6d, #191b1c)) !default;
+$gradientSucess: var(--gamb-gradient-success, linear-gradient(135deg, #16a34a, #138b3f)) !default;
+$gradientAlerta: var(--gamb-gradient-danger, linear-gradient(135deg, #dc2626, #b91c1c)) !default;
+$gradientCinza: var(--gamb-gradient-grey, linear-gradient(135deg, #909fbf, #575f6d)) !default;
+$gradientCinzaClaro: var(--gamb-gradient-muted, linear-gradient(135deg, #575f6d, #c7cfdb)) !default;
+$gradientAzulBg: var(--gamb-gradient-primary-soft, linear-gradient(135deg, #f2f4f7, #dfe2e7)) !default;
+$gradientInfo: var(--gamb-gradient-info, linear-gradient(135deg, #5ca8ff, #3b82f6)) !default;
+
+$color-primary: $primary-color !default;
+$color-primary-light: $primary-light !default;
+$color-primary-dark: $primary-dark !default;
+$color-secondary: $secondary-color !default;
+$color-accent: $accent-color !default;
+$color-accent-dark: $accent-dark !default;
+$color-danger: $danger-color !default;
+$color-warning: $warning-color !default;
+$color-success: $success-color !default;
+$color-info: $info-color !default;
+$color-muted: $text-light !default;
+$color-surface: $bg-white !default;
+$color-text: $text-dark !default;
+$color-text-muted: $text-color !default;
+$color-topbar: $secondary-color !default;
+
+$cores: (
+  primary: $primary-color,
+  primary-hover: $primary-color-hover,
+  secondary: $secondary-color,
+  secondary-hover: $secondary-hover,
+  accent: $accent-color,
+  accent-hover: $accent-hover,
+  warn: $warn-color,
+  warn-hover: $warn-hover,
+  warning: $warning-color,
+  warning-hover: $warning-hover,
+  warm: $warm-color,
+  warm-hover: $warm-color-hover,
+  success: $success-color,
+  success-hover: $success-hover,
+  danger: $danger-color,
+  danger-hover: $danger-hover,
+  info: $info-color,
+  info-hover: $info-color-hover,
+  help: $help-color,
+  contrast: $contrast-color,
+  dark: $dark-color,
+  dark-light: $dark-light,
+  dark-medium: $dark-medium,
+  'white': $white-color,
+  text-dark: $text-dark,
+  text: $text-color,
+  text-light: $text-light,
+  'grey': $grey-color,
+  bg-secondary: $bg-secondary,
+  bg-primary: $bg-primary,
+  bg-medium: $bg-medium,
+  bg-white: $bg-white,
+  bg-hover: $bg-hover,
+  border: $border-color,
+  border-hover: $border-color-hover,
+  testetgamb: var(--gamb-testetgamb, #ed3224),
+  brand-teal: var(--gamb-brand-teal, #1b5866)
+) !default;
+
+$gradientes: (
+  principal: $gradientPrincipal,
+  primary: $gradientPrincipal,
+  secundario: $gradientSecundario,
+  secondary: $gradientSecundario,
+  destaque: $gradientDestaque,
+  accent: $gradientDestaque,
+  warn: var(--gamb-gradient-warn, linear-gradient(135deg, #f59e0b, #d97706)),
+  warning: var(--gamb-gradient-warning, linear-gradient(135deg, #f59e0b, #d97706)),
+  login: $gradientLogin,
+  pastel: $gradientPastel,
+  textos: $gradientTextos,
+  sucess: $gradientSucess,
+  success: $gradientSucess,
+  alerta: $gradientAlerta,
+  danger: $gradientAlerta,
+  info: $gradientInfo,
+  help: var(--gamb-gradient-help, linear-gradient(135deg, #8da4dd, #7c8fd0)),
+  cinza: $gradientCinza,
+  cinza-claro: $gradientCinzaClaro,
+  azul-bg: $gradientAzulBg,
+  testetgamb: var(--gamb-gradient-testetgamb, linear-gradient(135deg, #ed3224, #cb2e23))
+) !default;
+
+$button-variants: (
+  primary: ($primary-color, $gradientPrincipal),
+  secondary: ($secondary-color, $gradientSecundario),
+  success: ($success-color, $gradientSucess),
+  info: ($info-color, $gradientInfo),
+  warn: ($warn-color, var(--gamb-gradient-warn, linear-gradient(135deg, #f59e0b, #d97706))),
+  warning: ($warning-color, var(--gamb-gradient-warning, linear-gradient(135deg, #f59e0b, #d97706))),
+  help: ($help-color, var(--gamb-gradient-help, linear-gradient(135deg, #8da4dd, #7c8fd0))),
+  danger: ($danger-color, $gradientAlerta),
+  contrast: ($contrast-color, var(--gamb-gradient-contrast, linear-gradient(135deg, #101722, #030712))),
+  accent: ($accent-color, $gradientDestaque),
+  login: ($accent-color, $gradientLogin),
+  dark: ($dark-color, var(--gamb-gradient-contrast, linear-gradient(135deg, #101722, #030712))),
+  warm: ($warm-color, var(--gamb-gradient-warning, linear-gradient(135deg, #f59e0b, #d97706))),
+  'grey': ($grey-color, $gradientCinzaClaro),
+  text-light: ($text-color, $gradientCinza),
+  pastel: ($bg-primary, $gradientPastel),
+  testetgamb: (var(--gamb-testetgamb, #ed3224), var(--gamb-gradient-testetgamb, linear-gradient(135deg, #ed3224, #cb2e23)))
+) !default;
+
+$ds-color-palette: (
+  primary: (
+    base: var(--gamb-primary),
+    50: var(--gamb-primary-50),
+    100: var(--gamb-primary-100),
+    200: var(--gamb-primary-200),
+    300: var(--gamb-primary-300),
+    400: var(--gamb-primary-400),
+    500: var(--gamb-primary-500),
+    600: var(--gamb-primary-600),
+    700: var(--gamb-primary-700),
+    800: var(--gamb-primary-800),
+    900: var(--gamb-primary-900),
+    950: var(--gamb-primary-950),
+  ),
+  secondary: (
+    base: var(--gamb-secondary),
+    50: var(--gamb-secondary-50),
+    100: var(--gamb-secondary-100),
+    200: var(--gamb-secondary-200),
+    300: var(--gamb-secondary-300),
+    400: var(--gamb-secondary-400),
+    500: var(--gamb-secondary-500),
+    600: var(--gamb-secondary-600),
+    700: var(--gamb-secondary-700),
+    800: var(--gamb-secondary-800),
+    900: var(--gamb-secondary-900),
+    950: var(--gamb-secondary-950),
+  ),
+  accent: (
+    base: var(--gamb-accent),
+    50: var(--gamb-accent-50),
+    100: var(--gamb-accent-100),
+    200: var(--gamb-accent-200),
+    300: var(--gamb-accent-300),
+    400: var(--gamb-accent-400),
+    500: var(--gamb-accent-500),
+    600: var(--gamb-accent-600),
+    700: var(--gamb-accent-700),
+    800: var(--gamb-accent-800),
+    900: var(--gamb-accent-900),
+    950: var(--gamb-accent-950),
+  ),
+  warn: (
+    base: var(--gamb-warn),
+    50: var(--gamb-warn-50),
+    100: var(--gamb-warn-100),
+    200: var(--gamb-warn-200),
+    300: var(--gamb-warn-300),
+    400: var(--gamb-warn-400),
+    500: var(--gamb-warn-500),
+    600: var(--gamb-warn-600),
+    700: var(--gamb-warn-700),
+    800: var(--gamb-warn-800),
+    900: var(--gamb-warn-900),
+    950: var(--gamb-warn-950),
+  ),
+  warning: (
+    base: var(--gamb-warning),
+    50: var(--gamb-warning-50),
+    100: var(--gamb-warning-100),
+    200: var(--gamb-warning-200),
+    300: var(--gamb-warning-300),
+    400: var(--gamb-warning-400),
+    500: var(--gamb-warning-500),
+    600: var(--gamb-warning-600),
+    700: var(--gamb-warning-700),
+    800: var(--gamb-warning-800),
+    900: var(--gamb-warning-900),
+    950: var(--gamb-warning-950),
+  ),
+  success: (
+    base: var(--gamb-success),
+    50: var(--gamb-success-50),
+    100: var(--gamb-success-100),
+    200: var(--gamb-success-200),
+    300: var(--gamb-success-300),
+    400: var(--gamb-success-400),
+    500: var(--gamb-success-500),
+    600: var(--gamb-success-600),
+    700: var(--gamb-success-700),
+    800: var(--gamb-success-800),
+    900: var(--gamb-success-900),
+    950: var(--gamb-success-950),
+  ),
+  info: (
+    base: var(--gamb-info),
+    50: var(--gamb-info-50),
+    100: var(--gamb-info-100),
+    200: var(--gamb-info-200),
+    300: var(--gamb-info-300),
+    400: var(--gamb-info-400),
+    500: var(--gamb-info-500),
+    600: var(--gamb-info-600),
+    700: var(--gamb-info-700),
+    800: var(--gamb-info-800),
+    900: var(--gamb-info-900),
+    950: var(--gamb-info-950),
+  ),
+  help: (
+    base: var(--gamb-help),
+    50: var(--gamb-help-50),
+    100: var(--gamb-help-100),
+    200: var(--gamb-help-200),
+    300: var(--gamb-help-300),
+    400: var(--gamb-help-400),
+    500: var(--gamb-help-500),
+    600: var(--gamb-help-600),
+    700: var(--gamb-help-700),
+    800: var(--gamb-help-800),
+    900: var(--gamb-help-900),
+    950: var(--gamb-help-950),
+  ),
+  danger: (
+    base: var(--gamb-danger),
+    50: var(--gamb-danger-50),
+    100: var(--gamb-danger-100),
+    200: var(--gamb-danger-200),
+    300: var(--gamb-danger-300),
+    400: var(--gamb-danger-400),
+    500: var(--gamb-danger-500),
+    600: var(--gamb-danger-600),
+    700: var(--gamb-danger-700),
+    800: var(--gamb-danger-800),
+    900: var(--gamb-danger-900),
+    950: var(--gamb-danger-950),
+  ),
+  contrast: (
+    base: var(--gamb-contrast),
+    50: var(--gamb-contrast-50),
+    100: var(--gamb-contrast-100),
+    200: var(--gamb-contrast-200),
+    300: var(--gamb-contrast-300),
+    400: var(--gamb-contrast-400),
+    500: var(--gamb-contrast-500),
+    600: var(--gamb-contrast-600),
+    700: var(--gamb-contrast-700),
+    800: var(--gamb-contrast-800),
+    900: var(--gamb-contrast-900),
+    950: var(--gamb-contrast-950),
+  ),
+  muted: (
+    base: var(--gamb-muted),
+    50: var(--gamb-muted-50),
+    100: var(--gamb-muted-100),
+    200: var(--gamb-muted-200),
+    300: var(--gamb-muted-300),
+    400: var(--gamb-muted-400),
+    500: var(--gamb-muted-500),
+    600: var(--gamb-muted-600),
+    700: var(--gamb-muted-700),
+    800: var(--gamb-muted-800),
+    900: var(--gamb-muted-900),
+    950: var(--gamb-muted-950),
+  ),
+  surface: (
+    base: var(--gamb-surface),
+    50: var(--gamb-surface-50),
+    100: var(--gamb-surface-100),
+    200: var(--gamb-surface-200),
+    300: var(--gamb-surface-300),
+    400: var(--gamb-surface-400),
+    500: var(--gamb-surface-500),
+    600: var(--gamb-surface-600),
+    700: var(--gamb-surface-700),
+    800: var(--gamb-surface-800),
+    900: var(--gamb-surface-900),
+    950: var(--gamb-surface-950),
+  ),
+  neutral: (
+    base: var(--gamb-neutral),
+    50: var(--gamb-neutral-50),
+    100: var(--gamb-neutral-100),
+    200: var(--gamb-neutral-200),
+    300: var(--gamb-neutral-300),
+    400: var(--gamb-neutral-400),
+    500: var(--gamb-neutral-500),
+    600: var(--gamb-neutral-600),
+    700: var(--gamb-neutral-700),
+    800: var(--gamb-neutral-800),
+    900: var(--gamb-neutral-900),
+    950: var(--gamb-neutral-950),
+  ),
+  'grey': (
+    base: var(--gamb-grey),
+    50: var(--gamb-grey-50),
+    100: var(--gamb-grey-100),
+    200: var(--gamb-grey-200),
+    300: var(--gamb-grey-300),
+    400: var(--gamb-grey-400),
+    500: var(--gamb-grey-500),
+    600: var(--gamb-grey-600),
+    700: var(--gamb-grey-700),
+    800: var(--gamb-grey-800),
+    900: var(--gamb-grey-900),
+    950: var(--gamb-grey-950),
+  ),
+  testetgamb: (
+    base: var(--gamb-testetgamb),
+    50: var(--gamb-testetgamb-50),
+    100: var(--gamb-testetgamb-100),
+    200: var(--gamb-testetgamb-200),
+    300: var(--gamb-testetgamb-300),
+    400: var(--gamb-testetgamb-400),
+    500: var(--gamb-testetgamb-500),
+    600: var(--gamb-testetgamb-600),
+    700: var(--gamb-testetgamb-700),
+    800: var(--gamb-testetgamb-800),
+    900: var(--gamb-testetgamb-900),
+    950: var(--gamb-testetgamb-950),
+  ),
+  brand-teal: (
+    base: var(--gamb-brand-teal),
+    50: var(--gamb-brand-teal-50),
+    100: var(--gamb-brand-teal-100),
+    200: var(--gamb-brand-teal-200),
+    300: var(--gamb-brand-teal-300),
+    400: var(--gamb-brand-teal-400),
+    500: var(--gamb-brand-teal-500),
+    600: var(--gamb-brand-teal-600),
+    700: var(--gamb-brand-teal-700),
+    800: var(--gamb-brand-teal-800),
+    900: var(--gamb-brand-teal-900),
+    950: var(--gamb-brand-teal-950),
+  ),
+) !default;
+
+$ds-emit-tailwind-bridge-utilities: true !default;
+$ds-utility-important: false !default;
+
+@mixin ds-declare($property, $value) {
+  @if $ds-utility-important {
+    #{$property}: #{$value} !important;
+  } @else {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin gerar-classes-cores($nome, $valor) {
+  .#{$nome} { @include ds-declare(color, $valor); }
+  .bg-#{$nome} { @include ds-declare(background-color, $valor); }
+  .text-#{$nome} { @include ds-declare(color, $valor); }
+  .border-#{$nome} { @include ds-declare(border-color, $valor); }
+}
+
+@mixin gerar-classes-gradientes($nome, $valor) {
+  .bg-gradient-#{$nome},
+  .gradient-#{$nome} {
+    @include ds-declare(background-image, $valor);
+  }
+}
+
+@each $nome, $valor in $cores {
+  @include gerar-classes-cores($nome, $valor);
+}
+
+@each $nome, $valor in $gradientes {
+  @include gerar-classes-gradientes($nome, $valor);
+}
+
+@mixin ds-color-utility($name, $step, $value) {
+  $suffix: '#{$name}-#{$step}';
+
+  @if $step == base {
+    $suffix: '#{$name}';
+  }
+
+  .bg-#{$suffix} { @include ds-declare(background-color, $value); }
+  .text-#{$suffix} { @include ds-declare(color, $value); }
+  .decoration-#{$suffix} { @include ds-declare(text-decoration-color, $value); }
+  .border-#{$suffix} { @include ds-declare(border-color, $value); }
+  .outline-#{$suffix} { @include ds-declare(outline-color, $value); }
+  .accent-#{$suffix} { @include ds-declare(accent-color, $value); }
+  .caret-#{$suffix} { @include ds-declare(caret-color, $value); }
+  .fill-#{$suffix} { @include ds-declare(fill, $value); }
+  .stroke-#{$suffix} { @include ds-declare(stroke, $value); }
+
+  .shadow-#{$suffix} {
+    --tw-shadow-color: #{$value};
+    --gamb-shadow-color: color-mix(in oklab, #{$value} 32%, transparent);
+    @include ds-declare(box-shadow, var(--gamb-shadow-default, 0 10px 25px -12px var(--gamb-shadow-color)));
+  }
+
+  .inset-shadow-#{$suffix} {
+    --tw-inset-shadow-color: #{$value};
+    --gamb-inset-shadow-color: color-mix(in oklab, #{$value} 28%, transparent);
+    @include ds-declare(box-shadow, inset 0 2px 8px var(--gamb-inset-shadow-color));
+  }
+
+  .ring-#{$suffix} {
+    --tw-ring-color: #{$value};
+    @include ds-declare(box-shadow, 0 0 0 3px color-mix(in oklab, #{$value} 36%, transparent));
+  }
+
+  .inset-ring-#{$suffix} {
+    --tw-inset-ring-color: #{$value};
+    @include ds-declare(box-shadow, inset 0 0 0 1px #{$value});
+  }
+
+  .scrollbar-thumb-#{$suffix} {
+    scrollbar-color: #{$value} var(--gamb-scrollbar-track, transparent);
+  }
+
+  .scrollbar-thumb-#{$suffix}::-webkit-scrollbar-thumb {
+    background-color: #{$value};
+  }
+
+  .scrollbar-track-#{$suffix} {
+    --gamb-scrollbar-track: #{$value};
+    scrollbar-color: var(--gamb-scrollbar-thumb, currentColor) #{$value};
+  }
+
+  .scrollbar-track-#{$suffix}::-webkit-scrollbar-track {
+    background-color: #{$value};
+  }
+}
+
+@if $ds-emit-tailwind-bridge-utilities {
+  @layer utilities {
+    @each $name, $steps in $ds-color-palette {
+      @each $step, $value in $steps {
+        @include ds-color-utility($name, $step, $value);
+      }
+    }
+
+    .font-primary { font-family: var(--gamb-font-primary); }
+    .font-secondary { font-family: var(--gamb-font-secondary); }
+    .font-number { font-family: var(--gamb-font-number); font-variant-numeric: tabular-nums; }
+    .font-badge { font-family: var(--gamb-font-badge); }
+
+    .bg-app { background-color: var(--gamb-background); }
+    .bg-surface { background-color: var(--gamb-surface); }
+    .text-app { color: var(--gamb-text); }
+    .text-muted { color: var(--gamb-text-muted); }
+    .border-app { border-color: var(--gamb-border); }
+
+    .bg-gradient-primary { background-image: var(--gamb-gradient-primary); }
+    .bg-gradient-secondary { background-image: var(--gamb-gradient-secondary); }
+    .bg-gradient-accent { background-image: var(--gamb-gradient-accent); }
+    .bg-gradient-warn { background-image: var(--gamb-gradient-warn); }
+    .bg-gradient-warning { background-image: var(--gamb-gradient-warning); }
+    .bg-gradient-success { background-image: var(--gamb-gradient-success); }
+    .bg-gradient-info { background-image: var(--gamb-gradient-info); }
+    .bg-gradient-danger { background-image: var(--gamb-gradient-danger); }
+    .bg-gradient-header { background-image: var(--gamb-gradient-header); }
+    .bg-gradient-login { background-image: var(--gamb-gradient-login); }
+  }
+}
+
+
+/* ----------------------------------------------------------------------
+   Base leve: sem reset agressivo, para conversar com Angular, React, PrimeNG e CSS comum.
+------------------------------------------------------------------------ */
+@layer base {
+  :where(html) {
+    font-family: var(--gamb-font-primary);
+    background: var(--gamb-background);
+    color: var(--gamb-text);
+    scroll-behavior: smooth;
+    text-rendering: optimizelegibility;
+  }
+
+  :where(body) {
+    min-height: 100dvh;
+    margin: 0;
+    background: var(--gamb-background);
+    color: var(--gamb-text);
+    font-family: var(--gamb-font-primary);
+    transition: var(--gamb-transition-default);
+  }
+
+  :where(button, input, select, textarea, .p-component) {
+    font-family: inherit;
+  }
+
+  :where(code, kbd, samp, pre, .font-number, [data-number]) {
+    font-family: var(--gamb-font-number);
+    font-variant-numeric: tabular-nums;
+  }
+
+  :where(:focus-visible) {
+    outline: 2px solid var(--gamb-info);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--gamb-primary-200);
+    color: var(--gamb-primary-900);
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--gamb-surface);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gamb-text-light);
+    border: 3px solid var(--gamb-surface);
+    border-radius: var(--gamb-radius-pill);
+  }
+}
+
+
+/* ----------------------------------------------------------------------
+   Mixins PrimeNG: usados pelo app.scss atual, expandidos para severities.
+------------------------------------------------------------------------ */
+@mixin button-base {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  border: 1px solid transparent;
+  border-radius: $borderRadius;
+  font-family: $font-secondary;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: $white-color;
+  text-transform: none !important;
+  background-size: 200% 100%;
+  background-position: $bgPositionDefault !important;
+  transition: $transition !important;
+  transform: scale(1) !important;
+  transform-origin: center center;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+
+  &:not(.p-button-icon-only):not(.p-button-text):not(.p-button-link) {
+    min-width: clamp(10rem, 8dvw, 13.75rem);
+    width: auto;
+    min-height: $heightDefault;
+    padding-inline: $paddingDefault;
+    font-weight: 500 !important;
+  }
+
+  & .p-button-label {
+    font-weight: 500;
+  }
+
+  &:disabled,
+  &.p-disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    transform: none !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $info-color;
+    outline-offset: 2px;
+    box-shadow: var(--gamb-shadow-focus) !important;
+  }
+
+  &:active:not(:disabled):not(.p-disabled) {
+    transform: scale(0.97) !important;
+  }
+
+  &:hover:not(:disabled):not(.p-disabled) {
+    background-position: $bgPositionHover !important;
+    transition: $transition !important;
+    transform: scale($hoverScale) !important;
+    opacity: $hoverOpacity !important;
+    box-shadow: $hoverBoxShadow !important;
+  }
+}
+
+@mixin button-variant($name, $color, $gradient) {
+  &.p-button-#{'' + $name},
+  &.p-button-#{$name} {
+    background-color: $color;
+    background-image: $gradient;
+    border-color: $color;
+    color: var(--gamb-#{$name}-foreground, #ffffff);
+
+    &:hover:not(:disabled):not(.p-disabled) {
+      background-position: $bgPositionHover;
+      border-color: color-mix(in oklab, #{$color} 88%, black);
+      transform: scale($hoverScale);
+      opacity: $hoverOpacity;
+      box-shadow: $hoverBoxShadow;
+    }
+  }
+}
+
+@mixin button-outlined($name, $color) {
+  &.p-button-outlined.p-button-#{'' + $name},
+  &.p-button-outlined.p-button-#{$name} {
+    background-color: transparent;
+    background-image: none;
+    color: $color;
+    border: 1px solid currentColor;
+    font-weight: 500;
+    box-shadow: none;
+
+    .p-button-label { font-weight: 500 !important; }
+
+    &:hover:not(:disabled):not(.p-disabled) {
+      background: color-mix(in oklab, #{$color} 10%, transparent) !important;
+      transform: scale($hoverScale);
+      box-shadow: none !important;
+    }
+  }
+}
+
+@mixin button-icon-only($name, $color) {
+  &.p-button-icon-only.p-button-#{'' + $name},
+  &.p-button-icon-only.p-button-#{$name} {
+    width: 2.357rem;
+    min-width: 2.357rem;
+    height: 2.357rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    color: $color;
+    box-shadow: none;
+
+    &:hover:not(:disabled):not(.p-disabled) {
+      background-color: color-mix(in oklab, #{$color} 12%, transparent);
+      transform: scale(1.03);
+      opacity: 0.95;
+      box-shadow: none !important;
+      filter: brightness(0.9);
+      text-decoration: none !important;
+    }
+
+    &.p-button-rounded:hover {
+      box-shadow: none !important;
+      transform: scale(1.03);
+      filter: brightness(0.9);
+      text-decoration: none !important;
+    }
+  }
+}
+
+@mixin button-text($name, $color) {
+  &.p-button-text.p-button-#{'' + $name},
+  &.p-button-text.p-button-#{$name} {
+    width: auto;
+    height: auto;
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    color: $color;
+    box-shadow: none;
+
+    &:hover:not(:disabled):not(.p-disabled) {
+      transform: scale(1.02);
+      opacity: 0.95;
+      background: color-mix(in oklab, #{$color} 8%, transparent) !important;
+      background-image: none !important;
+      text-decoration: underline;
+      box-shadow: none !important;
+    }
+  }
+}
+
+@mixin dialog-close-button {
+  .p-button.p-button-icon-only.p-dialog-close-button,
+  .p-dialog-close-button {
+    color: $primary-color !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--gamb-radius-pill);
+    box-shadow: none !important;
+
+    &:hover {
+      color: $primary-color-hover !important;
+      background: var(--gamb-primary-50) !important;
+      border-color: var(--gamb-primary-100) !important;
+      transform: scale(1.03);
+    }
+
+    .p-ink {
+      display: flex;
+      align-items: center;
+    }
+
+    .p-icon,
+    .p-button-icon {
+      font-size: 1.25rem;
+      color: currentColor;
+    }
+  }
+}
+
+/* Aplicação direta, útil quando este arquivo for importado sem o loop do app.scss. */
+.p-button {
+  @include button-base;
+
+  @each $name, $values in $button-variants {
+    $color: list.nth($values, 1);
+    $gradient: list.nth($values, 2);
+    @include button-variant($name, $color, $gradient);
+    @include button-outlined($name, $color);
+    @include button-icon-only($name, $color);
+    @include button-text($name, $color);
+  }
+}
+
+@include dialog-close-button;
+
+.p-button-text:not(:disabled):not(.p-disabled):hover,
+.p-button-outlined:not(:disabled):not(.p-disabled):hover {
+  box-shadow: none !important;
+}
+
+/* Botões CSS comuns herdados do testetgamb, agora usando tokens novos. */
+.btn,
+.btnBase,
+.btnGrad {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: var(--gamb-height-control);
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--gamb-radius-default);
+  font-family: var(--gamb-font-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--gamb-transition-default);
+  transform-origin: center center;
+  box-shadow: var(--gamb-shadow-light);
+}
+
+.btn:hover,
+.btnBase:hover,
+.btnGrad:hover {
+  transform: scale(var(--gamb-hover-scale));
+  box-shadow: var(--gamb-shadow-hover);
+}
+
+.btn:active,
+.btnBase:active,
+.btnGrad:active {
+  transform: scale(0.98);
+  transition-duration: 100ms;
+}
+
+.btn:disabled,
+.btn[disabled],
+.btnBase:disabled,
+.btnGrad:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btnPrimary,
+.btn-primary,
+.btnPrimaryBase,
+.btnPrimaryGrad {
+  background-color: var(--gamb-primary);
+  background-image: var(--gamb-gradient-primary);
+  color: var(--gamb-primary-foreground);
+  border-color: var(--gamb-primary);
+}
+
+.btnSecondary,
+.btn-secondary,
+.btnSecondaryBase,
+.btnSecondaryGrad {
+  background-color: transparent;
+  color: var(--gamb-primary);
+  border-color: var(--gamb-primary);
+  box-shadow: none;
+}
+
+.btnSecondary:hover,
+.btn-secondary:hover {
+  background-color: var(--gamb-primary-50);
+  border-color: var(--gamb-primary-hover);
+  color: var(--gamb-primary-hover);
+}
+
+.btnIcon,
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: var(--gamb-radius-pill);
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--gamb-primary);
+  box-shadow: none;
+}
+
+.btnIcon:hover,
+.btn-icon:hover {
+  background-color: var(--gamb-primary-50);
+  transform: scale(1.08);
+}
+
+.btnSuccess,
+.btn-success { background-color: var(--gamb-success); color: var(--gamb-success-foreground); border-color: var(--gamb-success); }
+.btnWarning,
+.btn-warning { background-color: var(--gamb-warning); color: var(--gamb-warning-foreground); border-color: var(--gamb-warning); }
+.btnWarn,
+.btn-warn { background-color: var(--gamb-warn); color: var(--gamb-warn-foreground); border-color: var(--gamb-warn); }
+.btnDanger,
+.btn-danger { background-color: var(--gamb-danger); color: var(--gamb-danger-foreground); border-color: var(--gamb-danger); }
+.btnInfo,
+.btn-info { background-color: var(--gamb-info); color: var(--gamb-info-foreground); border-color: var(--gamb-info); }
+.btnHelp,
+.btn-help { background-color: var(--gamb-help); color: var(--gamb-help-foreground); border-color: var(--gamb-help); }
+.btnContrast,
+.btn-contrast { background-color: var(--gamb-contrast); color: var(--gamb-contrast-foreground); border-color: var(--gamb-contrast); }
+
+.btnBase {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btnBase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: transform var(--gamb-transition-speed) ease;
+  transform: translateX(-100%);
+  background: color-mix(in oklab, currentColor 14%, transparent);
+}
+
+.btnBase:hover::before {
+  transform: translateX(0);
+}
+
+.btnGrad {
+  background-size: 200% auto;
+}
+
+.btnGrad:hover {
+  background-position: right center;
+}

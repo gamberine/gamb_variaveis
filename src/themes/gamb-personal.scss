@@ -1,0 +1,11 @@
+@use '../palettes/gamb-personal' as gamb-palette;
+
+/*
+  Tema opcional para ser carregado depois do design system.
+  Um projeto novo pode copiar este formato e redefinir somente tokens base.
+*/
+:root,
+:host,
+[data-gamb-palette='personal'] {
+  @include gamb-palette.values;
+}

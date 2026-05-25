@@ -1,0 +1,35 @@
+{
+  "name": "gamb-variaveis",
+  "version": "1.0.0",
+  "description": "Tokens e estilos compartilhados do GAMB Design System.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamberine/.gamb_variaveis.git"
+  },
+  "homepage": "https://github.com/gamberine/.gamb_variaveis#readme",
+  "bugs": {
+    "url": "https://github.com/gamberine/.gamb_variaveis/issues"
+  },
+  "style": "dist/gamb-design-system.min.css",
+  "sass": ".variables.gamb-design-system.scss",
+  "files": [
+    "dist",
+    "src",
+    ".variables.gamb-design-system.scss",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:palette && npm run build:core && npm run build:extras",
+    "build:palette": "sass --no-source-map --style=expanded src/gamb-palette.scss dist/gamb-palette.css && sass --no-source-map --style=compressed src/gamb-palette.scss dist/gamb-palette.min.css",
+    "build:core": "sass --no-source-map --style=expanded .variables.gamb-design-system.scss dist/gamb-design-system.css && sass --no-source-map --style=compressed .variables.gamb-design-system.scss dist/gamb-design-system.min.css",
+    "build:extras": "sass --no-source-map --style=expanded src/themes/gamb-personal.scss dist/themes/gamb-personal.css && sass --no-source-map --style=compressed src/themes/gamb-personal.scss dist/themes/gamb-personal.min.css && sass --no-source-map --style=expanded src/compat/gamb-legacy.scss dist/compat/gamb-legacy.css && sass --no-source-map --style=compressed src/compat/gamb-legacy.scss dist/compat/gamb-legacy.min.css",
+    "check": "npm run build && node scripts/validate-build.mjs",
+    "audit:theme": "node scripts/audit-theme.mjs",
+    "prepack": "npm run check"
+  },
+  "devDependencies": {
+    "sass": "1.99.0"
+  }
+}

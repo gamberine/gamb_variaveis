@@ -1,0 +1,96 @@
+@use 'sass:list';
+@use 'palettes/gamb-personal' as gamb-palette;
+
+$families: primary, secondary, accent, success, warning, info, help, danger, contrast, muted, surface, neutral, 'grey' !default;
+$steps: (
+  50: (6%, white),
+  100: (12%, white),
+  200: (22%, white),
+  300: (35%, white),
+  400: (55%, white),
+  600: (88%, black),
+  700: (76%, black),
+  800: (64%, black),
+  900: (50%, black),
+  950: (36%, black)
+) !default;
+
+@mixin generate-family($name) {
+  --gamb-#{$name}-hover: color-mix(
+    in srgb,
+    var(--gamb-#{$name}) var(--gamb-#{$name}-hover-weight, var(--gamb-state-hover-weight)),
+    black
+  );
+  --gamb-#{$name}-active: color-mix(
+    in srgb,
+    var(--gamb-#{$name}) var(--gamb-#{$name}-active-weight, var(--gamb-state-active-weight)),
+    black
+  );
+  --gamb-#{$name}-500: var(--gamb-#{$name});
+
+  @each $step, $mix in $steps {
+    --gamb-#{$name}-#{$step}: color-mix(in oklab, var(--gamb-#{$name}) #{list.nth($mix, 1)}, #{list.nth($mix, 2)});
+  }
+}
+
+@mixin alias-family($alias, $target) {
+  --gamb-#{$alias}: var(--gamb-#{$target});
+  --gamb-#{$alias}-hover: var(--gamb-#{$target}-hover);
+  --gamb-#{$alias}-active: var(--gamb-#{$target}-active);
+  --gamb-#{$alias}-foreground: var(--gamb-#{$target}-foreground);
+
+  @each $step in 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950 {
+    --gamb-#{$alias}-#{$step}: var(--gamb-#{$target}-#{$step});
+  }
+}
+
+@mixin light {
+  @include gamb-palette.values;
+  --gamb-white: #ffffff;
+  --gamb-black: #000000;
+
+  --gamb-state-hover-weight: 86%;
+  --gamb-state-active-weight: 62%;
+  --gamb-secondary-hover-weight: 76%;
+  --gamb-surface-hover-weight: 95%;
+  --gamb-surface-active-weight: 88%;
+
+  --gamb-primary-foreground: var(--gamb-on-dark);
+  --gamb-secondary-foreground: var(--gamb-on-dark);
+  --gamb-accent-foreground: var(--gamb-on-dark);
+  --gamb-success-foreground: var(--gamb-on-dark);
+  --gamb-warning-foreground: var(--gamb-contrast);
+  --gamb-info-foreground: var(--gamb-contrast);
+  --gamb-help-foreground: var(--gamb-contrast);
+  --gamb-danger-foreground: var(--gamb-on-dark);
+  --gamb-contrast-foreground: var(--gamb-on-dark);
+  --gamb-muted-foreground: var(--gamb-contrast);
+  --gamb-surface-foreground: var(--gamb-text);
+  --gamb-neutral-foreground: var(--gamb-on-dark);
+  --gamb-grey-foreground: var(--gamb-contrast);
+
+  @each $family in $families {
+    @include generate-family($family);
+  }
+
+  @include alias-family(warn, warning);
+  @include alias-family(testetgamb, primary);
+  @include alias-family(brand-teal, secondary);
+
+  --gamb-border: color-mix(in oklab, var(--gamb-background-muted) 88%, var(--gamb-text));
+  --gamb-border-hover: color-mix(in oklab, var(--gamb-background-muted) 76%, var(--gamb-text));
+  --gamb-focus-ring: color-mix(in oklab, var(--gamb-primary) 36%, transparent);
+}
+
+@mixin dark {
+  --gamb-background: #101722;
+  --gamb-background-muted: #151e2c;
+  --gamb-surface: #1c2130;
+  --gamb-surface-hover: #242b3d;
+  --gamb-text: #f8fafc;
+  --gamb-text-muted: #c7cfdb;
+  --gamb-text-light: #909fbf;
+  --gamb-border: color-mix(in oklab, var(--gamb-surface) 78%, white);
+  --gamb-border-hover: color-mix(in oklab, var(--gamb-primary) 36%, white);
+  --gamb-focus-ring: color-mix(in oklab, var(--gamb-primary) 44%, transparent);
+}
