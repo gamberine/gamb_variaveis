@@ -48,7 +48,7 @@ $gamb-bridge-steps: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950 !defaul
   --gamb-radius-2xl: 1.25rem;
   --gamb-radius-pill: 9999px;
   --gamb-radius-default: var(--gamb-radius-lg);
-  --gamb-height-control-sm: 2.25rem;
+  --gamb-height-control-sm: 2rem;
   --gamb-height-control: clamp(2.5rem, 4.2dvh, 3rem);
   --gamb-height-control-lg: clamp(2.75rem, 4.9dvh, 3.75rem);
   --gamb-padding-control-x: 1.2rem;
@@ -300,8 +300,8 @@ $font-badge: var(--gamb-font-badge, var(--gamb-font-secondary)) !default;
 
 $borderRadius: var(--gamb-radius-default, 0.75rem) !default;
 $heightMaior: var(--gamb-height-control-lg, clamp(2.75rem, 4.9dvh, 3.75rem)) !default;
-$heightDefault: var(--gamb-height-control, clamp(2.5rem, 4.2dvh, 3rem)) !default;
-$paddingDefault: var(--gamb-padding-control-x, 1.2rem) !default;
+$heightDefault: var(--gamb-height-control, clamp(2rem, 4dvh, 2.5rem)) !default;
+$paddingDefault: var(--gamb-padding-control-x, 1.1rem) !default;
 $bgPositionDefault: left center !default;
 $bgPositionHover: right center !default;
 $transition: var(--gamb-transition-default, all ease 0.3s) !default;
@@ -632,7 +632,7 @@ $ds-utility-important: false !default;
   border: 1px solid transparent;
   border-radius: $borderRadius;
   font-family: $font-secondary;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1;
   color: $white-color;
   text-transform: none !important;
@@ -649,11 +649,11 @@ $ds-utility-important: false !default;
     width: auto;
     min-height: $heightDefault;
     padding-inline: $paddingDefault;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
   }
 
   & .p-button-label {
-    font-weight: 500;
+    font-weight: 400;
   }
 
   &:disabled,
@@ -665,8 +665,8 @@ $ds-utility-important: false !default;
   }
 
   &:focus-visible {
-    outline: 2px solid $info-color;
-    outline-offset: 2px;
+    outline: 1px solid $info-color;
+    outline-offset: 1px;
     box-shadow: var(--gamb-shadow-focus) !important;
   }
 
@@ -706,10 +706,10 @@ $ds-utility-important: false !default;
     background-image: none;
     color: $color;
     border: 1px solid currentColor;
-    font-weight: 500;
+    font-weight: 400;
     box-shadow: none;
 
-    .p-button-label { font-weight: 500 !important; }
+    .p-button-label { font-weight: 400 !important; }
 
     &:hover:not(:disabled):not(.p-disabled) {
       background: color-mix(in oklab, #{$color} 10%, transparent) !important;
@@ -834,7 +834,7 @@ $ds-utility-important: false !default;
   border: 1px solid transparent;
   border-radius: var(--gamb-radius-default);
   font-family: var(--gamb-font-secondary);
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: none;
   transition: var(--gamb-transition-default);
