@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 - 2026-08-12
+
+- Publica os ajustes de medidas, tipografia e botoes do commit `f992108` nos artefatos de CDN.
+- Remove o espacamento interno residual dos botoes PrimeReact secundarios que exibem somente icone.
+- Corrige os metadados e exemplos para o nome canonico `gamberine/gamb_variaveis`.
+
 ## 1.0.1 - 2026-05-25
 
 - Gera bridges Tailwind/CSS e o mapa de utilities a partir de uma lista unica de familias.

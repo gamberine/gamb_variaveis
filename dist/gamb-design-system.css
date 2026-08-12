@@ -580,7 +580,7 @@
   --gamb-radius-2xl: 1.25rem;
   --gamb-radius-pill: 9999px;
   --gamb-radius-default: var(--gamb-radius-lg);
-  --gamb-height-control-sm: 2.25rem;
+  --gamb-height-control-sm: 2rem;
   --gamb-height-control: clamp(2.5rem, 4.2dvh, 3rem);
   --gamb-height-control-lg: clamp(2.75rem, 4.9dvh, 3.75rem);
   --gamb-padding-control-x: 1.2rem;
@@ -12909,7 +12909,7 @@
   border: 1px solid transparent;
   border-radius: var(--gamb-radius-default, 0.75rem);
   font-family: var(--gamb-font-secondary, "Saira Semi Condensed", sans-serif);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1;
   color: var(--gamb-white, #ffffff);
   text-transform: none !important;
@@ -12924,12 +12924,12 @@
 .p-button:not(.p-button-icon-only):not(.p-button-text):not(.p-button-link) {
   min-width: clamp(10rem, 8dvw, 13.75rem);
   width: auto;
-  min-height: var(--gamb-height-control, clamp(2.5rem, 4.2dvh, 3rem));
-  padding-inline: var(--gamb-padding-control-x, 1.2rem);
-  font-weight: 500 !important;
+  min-height: var(--gamb-height-control, clamp(2rem, 4dvh, 2.5rem));
+  padding-inline: var(--gamb-padding-control-x, 1.1rem);
+  font-weight: 400 !important;
 }
 .p-button .p-button-label {
-  font-weight: 500;
+  font-weight: 400;
 }
 .p-button:disabled, .p-button.p-disabled, .p-button[aria-disabled=true] {
   opacity: 0.5;
@@ -12937,8 +12937,8 @@
   transform: none !important;
 }
 .p-button:focus-visible {
-  outline: 2px solid var(--gamb-info, #5ca8ff);
-  outline-offset: 2px;
+  outline: 1px solid var(--gamb-info, #5ca8ff);
+  outline-offset: 1px;
   box-shadow: var(--gamb-shadow-focus) !important;
 }
 .p-button:active:not(:disabled):not(.p-disabled) {
@@ -12969,11 +12969,11 @@
   background-image: none;
   color: var(--gamb-primary, #ed3224);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-primary .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-primary:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-primary, #ed3224) 10%, transparent) !important;
@@ -13041,11 +13041,11 @@
   background-image: none;
   color: var(--gamb-secondary, #1b5866);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-secondary .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-secondary:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-secondary, #1b5866) 10%, transparent) !important;
@@ -13053,6 +13053,7 @@
   box-shadow: none !important;
 }
 .p-button.p-button-icon-only.p-button-secondary {
+  gap: 0;
   width: 2.357rem;
   min-width: 2.357rem;
   height: 2.357rem;
@@ -13113,11 +13114,11 @@
   background-image: none;
   color: var(--gamb-success, #16a34a);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-success .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-success:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-success, #16a34a) 10%, transparent) !important;
@@ -13185,11 +13186,11 @@
   background-image: none;
   color: var(--gamb-info, #5ca8ff);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-info .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-info:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-info, #5ca8ff) 10%, transparent) !important;
@@ -13257,11 +13258,11 @@
   background-image: none;
   color: var(--gamb-warn, #f59e0b);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-warn .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-warn:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-warn, #f59e0b) 10%, transparent) !important;
@@ -13329,11 +13330,11 @@
   background-image: none;
   color: var(--gamb-warning, #f59e0b);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-warning .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-warning:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-warning, #f59e0b) 10%, transparent) !important;
@@ -13401,11 +13402,11 @@
   background-image: none;
   color: var(--gamb-help, #8da4dd);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-help .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-help:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-help, #8da4dd) 10%, transparent) !important;
@@ -13473,11 +13474,11 @@
   background-image: none;
   color: var(--gamb-danger, #dc2626);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-danger .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-danger:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-danger, #dc2626) 10%, transparent) !important;
@@ -13545,11 +13546,11 @@
   background-image: none;
   color: var(--gamb-contrast, #191b1c);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-contrast .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-contrast:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-contrast, #191b1c) 10%, transparent) !important;
@@ -13617,11 +13618,11 @@
   background-image: none;
   color: var(--gamb-accent, #ff4089);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-accent .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-accent:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-accent, #ff4089) 10%, transparent) !important;
@@ -13689,11 +13690,11 @@
   background-image: none;
   color: var(--gamb-accent, #ff4089);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-login .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-login:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-accent, #ff4089) 10%, transparent) !important;
@@ -13761,11 +13762,11 @@
   background-image: none;
   color: var(--gamb-contrast, #1c2130);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-dark .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-dark:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-contrast, #1c2130) 10%, transparent) !important;
@@ -13833,11 +13834,11 @@
   background-image: none;
   color: var(--gamb-warn, #f59e0b);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-warm .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-warm:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-warn, #f59e0b) 10%, transparent) !important;
@@ -13905,11 +13906,11 @@
   background-image: none;
   color: var(--gamb-grey, #c7cfdb);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-grey .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-grey:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-grey, #c7cfdb) 10%, transparent) !important;
@@ -13977,11 +13978,11 @@
   background-image: none;
   color: var(--gamb-text-muted, #575f6d);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-text-light .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-text-light:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-text-muted, #575f6d) 10%, transparent) !important;
@@ -14049,11 +14050,11 @@
   background-image: none;
   color: var(--gamb-background, #f2f4f7);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-pastel .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-pastel:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-background, #f2f4f7) 10%, transparent) !important;
@@ -14121,11 +14122,11 @@
   background-image: none;
   color: var(--gamb-testetgamb, #ed3224);
   border: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: none;
 }
 .p-button.p-button-outlined.p-button-testetgamb .p-button-label {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .p-button.p-button-outlined.p-button-testetgamb:hover:not(:disabled):not(.p-disabled) {
   background: color-mix(in oklab, var(--gamb-testetgamb, #ed3224) 10%, transparent) !important;
@@ -14222,7 +14223,7 @@
   border: 1px solid transparent;
   border-radius: var(--gamb-radius-default);
   font-family: var(--gamb-font-secondary);
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: none;
   transition: var(--gamb-transition-default);

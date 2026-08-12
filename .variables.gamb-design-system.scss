@@ -721,6 +721,9 @@ $ds-utility-important: false !default;
 
 @mixin button-icon-only($name, $color) {
   &.p-button-icon-only.p-button-#{$name} {
+    @if $name == secondary {
+      gap: 0;
+    }
     width: 2.357rem;
     min-width: 2.357rem;
     height: 2.357rem;

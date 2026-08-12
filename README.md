@@ -1,4 +1,4 @@
-# .gamb_variaveis
+# gamb_variaveis
 
 Tokens de cor e estilos compartilhados do GAMB Design System, distribuiveis
 como CSS por CDN. A paleta padrao e a paleta pessoal GAMB; variantes `hover`,
@@ -12,17 +12,17 @@ Para uma explicacao curta de qual linha importar, consulte
 Para usar somente cores e evitar classes ou integracoes globais:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-palette.min.css">
 ```
 
 Para usar o design system completo, incluindo utilities, botoes e pontes
 Tailwind/PrimeNG:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-design-system.min.css">
 ```
 
-Na versao `v1.0.1`, a paleta minificada tem cerca de 17 KB; a folha completa
+Na versao `v1.0.2`, a paleta minificada tem cerca de 17 KB; a folha completa
 tem cerca de 417 KB por preservar as utilities e componentes do arquivo
 original. Prefira a paleta quando o projeto nao usar essas classes.
 
@@ -30,10 +30,10 @@ Projetos legados que ainda usam tokens camelCase carregam uma segunda linha,
 de forma intencional:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/compat/gamb-legacy.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/compat/gamb-legacy.min.css">
 ```
 
-Use sempre uma tag exata (`@v1.0.1`) em producao. Nao use `@main` ou uma URL
+Use sempre uma tag exata (`@v1.0.2`) em producao. Nao use `@main` ou uma URL
 sem versao: uma alteracao futura poderia atingir um projeto sem revisao.
 
 ## Paleta Padrao
@@ -79,7 +79,7 @@ Carregue o CDN primeiro e um arquivo do projeto depois. Defina somente bases;
 variantes, gradientes e componentes passam a acompanhar a nova paleta.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-design-system.min.css">
 <link rel="stylesheet" href="/styles/paleta-projeto.css">
 ```
 
@@ -138,7 +138,7 @@ Fluxo de publicacao:
 1. Edite fontes e atualize a versao/changelog conforme impacto.
 2. Execute `npm run check` e versione os arquivos de `dist/`.
 3. Integre em `main` somente apos o workflow `validate` passar.
-4. Crie uma tag imutavel, por exemplo `v1.0.1`, e uma GitHub Release.
+4. Crie uma tag imutavel, por exemplo `v1.0.2`, e uma GitHub Release.
 5. Atualize projetos consumidores somente depois de testar a nova URL fixada.
 
 O jsDelivr serve arquivos publicos do GitHub e os mantem em cache; por isso

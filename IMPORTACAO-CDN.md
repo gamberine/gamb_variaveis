@@ -6,7 +6,7 @@ Se voce quer importar apenas as cores para usar no seu proprio CSS, utilize
 somente esta linha:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-palette.min.css">
 ```
 
 Essa e a opcao recomendada para projetos novos. Ela fornece a paleta e suas
@@ -32,7 +32,7 @@ Exemplo de uso:
 Use uma linha:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-palette.min.css">
 ```
 
 Inclui:
@@ -56,7 +56,7 @@ alterar componentes ja existentes no projeto.
 Use uma linha:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-design-system.min.css">
 ```
 
 Inclui tudo da paleta e tambem:
@@ -92,7 +92,7 @@ background: var(--gamb-secondary);
 O arquivo de compatibilidade apenas traduz os nomes antigos para os novos:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/compat/gamb-legacy.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/compat/gamb-legacy.min.css">
 ```
 
 Ele nao deve ser usado sozinho. Use compatibilidade apenas se o seu projeto
@@ -101,15 +101,15 @@ ainda tiver variaveis antigas.
 Projeto antigo que precisa somente das cores:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/compat/gamb-legacy.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/compat/gamb-legacy.min.css">
 ```
 
 Projeto antigo que precisa do design system completo:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/compat/gamb-legacy.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/compat/gamb-legacy.min.css">
 ```
 
 Projetos novos nao devem importar compatibilidade.
@@ -121,14 +121,14 @@ Sim.
 Para projeto novo que so precisa das cores, importe somente:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-palette.min.css">
 ```
 
 Para projeto novo que precisa de classes e componentes prontos, importe
 somente:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-design-system.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-design-system.min.css">
 ```
 
 A segunda linha so existe quando voce precisa de compatibilidade com codigo
@@ -140,7 +140,7 @@ Importe uma das opcoes principais e, depois, declare apenas as novas cores no
 CSS do projeto:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/.gamb_variaveis@v1.0.1/dist/gamb-palette.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamberine/gamb_variaveis@v1.0.2/dist/gamb-palette.min.css">
 <link rel="stylesheet" href="/styles/paleta-do-projeto.css">
 ```
 
@@ -159,5 +159,5 @@ automaticamente a partir das cores base.
 
 ## Regra De Seguranca
 
-Use sempre a versao na URL, atualmente `@v1.0.1`. Assim um projeto publicado
+Use sempre a versao na URL, atualmente `@v1.0.2`. Assim um projeto publicado
 nao muda sozinho quando uma nova versao do design system for criada.

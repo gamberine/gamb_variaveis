@@ -1,15 +1,15 @@
 {
   "name": "gamb-variaveis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tokens e estilos compartilhados do GAMB Design System.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gamberine/.gamb_variaveis.git"
+    "url": "git+https://github.com/gamberine/gamb_variaveis.git"
   },
-  "homepage": "https://github.com/gamberine/.gamb_variaveis#readme",
+  "homepage": "https://github.com/gamberine/gamb_variaveis#readme",
   "bugs": {
-    "url": "https://github.com/gamberine/.gamb_variaveis/issues"
+    "url": "https://github.com/gamberine/gamb_variaveis/issues"
   },
   "style": "dist/gamb-design-system.min.css",
   "sass": ".variables.gamb-design-system.scss",
