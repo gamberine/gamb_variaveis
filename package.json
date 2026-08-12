@@ -30,6 +30,6 @@
     "prepack": "npm run check"
   },
   "devDependencies": {
-    "sass": "1.99.0"
+    "sass": "1.102.0"
   }
 }
